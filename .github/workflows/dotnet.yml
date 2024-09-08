@@ -31,4 +31,5 @@ jobs:
     - name: Set package version
       run: PKG_VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' ./src/FoSouzaDev.Common.Domain/FoSouzaDev.Common.Domain.csproj); echo 'PKG_VERSION=$PKG_VERSION' >> $GITHUB_ENV
     - name: Publish in nuget.org
-      run: dotnet nuget push ./package/FoSouzaDev.Common.Domain.$PKG_VERSION.nupkg --api-key ${{ secrets.NUGETORG }} --source https://api.nuget.org/v3/index.json
+      run: echo $PKG_VERSION; PKG_NAME=$(echo ./package/FoSouzaDev.Common.Domain.$PKG_VERSION.nupkg); echo $PKG_NAME
+      #run: dotnet nuget push ./package/FoSouzaDev.Common.Domain.$PKG_VERSION.nupkg --api-key ${{ secrets.NUGETORG }} --source https://api.nuget.org/v3/index.json
