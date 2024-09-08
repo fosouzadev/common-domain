@@ -6,7 +6,7 @@
     
     <IsPackable>true</IsPackable>
     <PackageId>$(AssemblyName)</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Authors>Felipe Souza</Authors>
     <RepositoryUrl>https://github.com/fosouzadev/common-domain</RepositoryUrl>
