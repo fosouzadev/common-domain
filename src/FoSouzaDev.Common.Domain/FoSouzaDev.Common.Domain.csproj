@@ -3,10 +3,12 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <RepositoryUrl>https://github.com/fosouzadev/common-domain</RepositoryUrl>
-    <Version>1.0.0</Version>
+    
     <IsPackable>true</IsPackable>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>https://github.com/fosouzadev</Authors>
+    <RepositoryUrl>https://github.com/fosouzadev/common-domain</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
