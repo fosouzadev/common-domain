@@ -28,10 +28,8 @@ jobs:
       run: dotnet test --no-restore --no-build --verbosity normal -c Release
     - name: Pack
       run: dotnet pack --no-restore --no-build -c Release -o ./package
-    - name: Get package version
-      run: PKG_VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' ./src/FoSouzaDev.Common.Domain/FoSouzaDev.Common.Domain.csproj); echo $PKG_VERSION
-    - name: Add package version to GITHUB_ENV
-      run: echo 'PKG_VERSION=$PKG_VERSION' >> $GITHUB_ENV
+    - name: Set package version
+      run: PKG_VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' ./src/FoSouzaDev.Common.Domain/FoSouzaDev.Common.Domain.csproj); echo 'PKG_VERSION=$PKG_VERSION' >> $GITHUB_ENV
     - name: Publish in nuget.org
       run: ls; echo $PKG_VERSION
     
