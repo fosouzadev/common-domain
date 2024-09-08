@@ -28,8 +28,9 @@ jobs:
       run: dotnet test --no-restore --no-build --verbosity normal -c Release
     - name: Pack
       run: dotnet pack --no-restore --no-build -c Release
+    - name: csproj version
+      run: sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' ./src/FoSouzaDev.Common.Domain/FoSouzaDev.Common.Domain.csproj
     - name: Ls
-      run: ls
-    - name: comand
-      run: sed
+      run: echo $GITHUB_PATH
+    
     # ${{ secrets.NUGETORG }}
