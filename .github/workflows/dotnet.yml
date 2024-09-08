@@ -29,7 +29,6 @@ jobs:
     - name: Pack
       run: dotnet pack --no-restore --no-build -c Release -o ./package
     - name: Set package version
-      run: PKG_VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' ./src/FoSouzaDev.Common.Domain/FoSouzaDev.Common.Domain.csproj); echo $PKG_VERSION; echo "PKG_VERSION=$PKG_VERSION" >> $GITHUB_ENV
+      run: PKG_VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' ./src/FoSouzaDev.Common.Domain/FoSouzaDev.Common.Domain.csproj); echo "PKG_VERSION=$PKG_VERSION" >> $GITHUB_ENV
     - name: Publish in nuget.org
-      run: echo $PKG_VERSION; echo "./package/FoSouzaDev.Common.Domain.$PKG_VERSION.nupkg"
-      #run: dotnet nuget push ./package/FoSouzaDev.Common.Domain.$PKG_VERSION.nupkg --api-key ${{ secrets.NUGETORG }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push "./package/FoSouzaDev.Common.Domain.$PKG_VERSION.nupkg" --api-key ${{ secrets.NUGETORG }} --source https://api.nuget.org/v3/index.json
