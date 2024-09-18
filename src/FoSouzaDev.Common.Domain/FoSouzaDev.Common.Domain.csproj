@@ -6,7 +6,7 @@
     
     <IsPackable>true</IsPackable>
     <PackageId>$(AssemblyName)</PackageId>
-    <Version>1.1.3</Version>
+    <Version>1.2.0</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Authors>Felipe Souza</Authors>
     <RepositoryUrl>https://github.com/fosouzadev/common-domain</RepositoryUrl>
@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
