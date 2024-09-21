@@ -1,6 +1,6 @@
 ﻿namespace FoSouzaDev.Common.Domain.Exceptions;
 
-public sealed class ConflictException(string identifier) : Exception(message: "Already registered.")
+public sealed class ConflictException(Guid id) : Exception(message: "Already registered.")
 {
-    public string Identifier => identifier;
+    public Guid Id => id;
 }

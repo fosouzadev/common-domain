@@ -1,5 +1,4 @@
-﻿using AutoFixture;
-using FluentAssertions;
+﻿using FluentAssertions;
 using FoSouzaDev.Common.Domain.Exceptions;
 
 namespace FoSouzaDev.Common.Domain.UnitaryTests.Exceptions;
@@ -10,13 +9,13 @@ public sealed class ConflictExceptionTest : BaseTest
     public void Constructor_Success_CreateAnException()
     {
         // Arrange
-        string expectedIdentifier = base.Fixture.Create<string>();
+        Guid expectedId = Guid.NewGuid();
 
         // Act
-        ConflictException ex = new(expectedIdentifier);
+        ConflictException ex = new(expectedId);
 
         // Assert
         ex.Message.Should().Be("Already registered.");
-        ex.Identifier.Should().Be(expectedIdentifier);
+        ex.Id.Should().Be(expectedId);
     }
 }
